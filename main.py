@@ -1,3 +1,20 @@
+""" 
+Seleccionar un escenario donde se aplique el principio. 
+Por ejemplo, un sistema de pago donde diferentes métodos de pago 
+(tarjeta de crédito, PayPal, transferencia bancaria) implementen la misma interfaz. 
+
+instrucciones
+- Escribir el código basado en el diagrama UML.
+- Crear una interfaz que defina las operaciones principales.7
+- Implementar múltiples clases concretas que hereden o implementen la interfaz.
+- Escribir una clase que utilice la interfaz sin depender de las implementaciones concretas.
+
+"""
+
+#se usa abc para crear una clase abstracta y definir un método abstracto 
+# porque en python no existe la palabra reservada interface
+# ABC = Abstract Base Class 
+# abstractmethod = decorador que indica que el método es abstracto
 from abc import ABC, abstractmethod
 
 # Interfaz
@@ -35,10 +52,10 @@ if __name__ == "__main__":
 
     # Procesar pagos
     procesador = SRP_MetodoDePago(tarjeta)
-    procesador.realizar_pago(100.0)
+    procesador.realizar_pago(1000.0)
 
     procesador = SRP_MetodoDePago(paypal)
-    procesador.realizar_pago(50.0)
+    procesador.realizar_pago(500.0)
 
     procesador = SRP_MetodoDePago(transferencia)
-    procesador.realizar_pago(200.0)
+    procesador.realizar_pago(100.0)
